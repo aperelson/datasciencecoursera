@@ -23,7 +23,7 @@ complete <- function(directory, id = 1:332) {
     csvData <- read.csv(file=theFileName, header=TRUE, sep=",")
     csvData <- csvData[complete.cases(csvData),]
     
-    totalArray = rbind(totalArray, data.frame(fileNumber,nrow(csvData)))
+    totalArray = rbind(totalArray, data.frame("id"=fileNumber,"nobs"=nrow(csvData)))
   }
   
   totalArray
